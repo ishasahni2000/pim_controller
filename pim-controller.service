@@ -1,0 +1,11 @@
+[Unit]
+Description=My DBus Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/mydbusapp
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
