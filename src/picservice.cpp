@@ -8,7 +8,7 @@ int main()
 
     std::cout << "PICService started. (Dummy for now)\n";
 
-    // This is a placeholder.
+  
     while (true)
     {
         bus.process_discard();
