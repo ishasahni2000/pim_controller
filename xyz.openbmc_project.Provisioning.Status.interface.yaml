@@ -1,0 +1,32 @@
+name: xyz.openbmc_project.Provisioning.Status
+
+properties:
+  - name: ProvisioningState
+    type: s
+    access: readwrite
+    description: >
+      The current state of the BMC (e.g. Unprovisioned, Provisioned)
+
+  - name: PICBit0
+    type: b
+    access: read
+    description: >
+      PIC Bit 0 status: indicates if BMC is unprovisioned
+
+  - name: PICBit1
+    type: b
+    access: read
+    description: >
+      PIC Bit 1 status: indicates if pending clear provision is set
+
+methods:
+  - name: ClearProvisioningData
+    description: >
+      Clear all provisioned data, reset PIC bits, and return to factory default
+    arguments: []
+
+  - name: ResetBMC
+    description: >
+      reboot the BMC, if PICBIT1 is set to 1 , call ClearProvisioningData
+    arguments: []
+
